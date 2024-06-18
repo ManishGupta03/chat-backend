@@ -22,9 +22,17 @@ mongoose
   })
   .then(() => {
     console.log("DB Connetion Successfull");
+    
   })
   .catch((err) => {
     console.log(err.message);
+  });
+
+  app.get("/", (req, res) => {
+    return res.send({
+      status: 200,
+      message: "Server is up an run condition. ",
+    });
   });
 
 app.use("/api/auth", authRoutes);
